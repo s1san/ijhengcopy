@@ -80,7 +80,7 @@
                 <el-icon><Message /></el-icon> 邮箱：contact@ijheng.com
               </p>
               <div class="qrcode">
-                <img src="/src/assets/qrcode.png" alt="微信二维码" />
+                <img src="/assets/qrcode.png" alt="微信二维码" />
                 <p>扫码关注我们</p>
               </div>
             </div>

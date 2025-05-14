@@ -124,21 +124,21 @@ const newsItems = ref([
     title: '聚恒数科董事长陈遂仲荣获"捐资助学功臣"称号',
     summary: "8月16日上午，湖南省涟源市关工委召开了关心下一代基金奖学助学金发放会议...",
     date: "2024-08-19",
-    image: "/src/assets/news.jpeg",
+    image: "/assets/news.jpeg",
   },
   {
     id: 2,
     title: "聚恒数科入驻总部乔迁仪式圆满举行",
     summary: "跨周期 共成长 向未来——聚恒数科入驻总部乔迁仪式圆满举行...",
     date: "2024-08-15",
-    image: "/src/assets/news.jpeg",
+    image: "/assets/news.jpeg",
   },
   {
     id: 3,
     title: "长沙市委常委、组织部长罗缵吉一行莅临指导",
     summary: "长沙市委常委、组织部长罗缵吉一行莅临聚恒数科指导党建工作...",
     date: "2024-08-10",
-    image: "/src/assets/news.jpeg",
+    image: "/assets/news.jpeg",
   },
 ]);
 
@@ -147,19 +147,19 @@ const businessItems = ref([
     id: 1,
     title: "消费互联网集群",
     description: "打造数字化生活服务平台",
-    image: "/src/assets/ifiled1.png",
+    image: "/assets/ifiled1.png",
   },
   {
     id: 2,
     title: "产业互联网集群",
     description: "推动产业数字化转型",
-    image: "/src/assets/ifiled2.png",
+    image: "/assets/ifiled2.png",
   },
   {
     id: 3,
     title: "产业投资",
     description: "助力创新企业发展",
-    image: "/src/assets/ifiled3.png",
+    image: "/assets/ifiled3.png",
   },
 ]);
 
@@ -167,22 +167,22 @@ const cultureItems = ref([
   {
     id: 1,
     title: "文化理念",
-    image: "/src/assets/iculture1.png",
+    image: "/assets/iculture1.png",
   },
   {
     id: 2,
     title: "员工风采",
-    image: "/src/assets/iculture2.png",
+    image: "/assets/iculture2.png",
   },
   {
     id: 3,
     title: "社会责任",
-    image: "/src/assets/iculture3.png",
+    image: "/assets/iculture3.png",
   },
   {
     id: 4,
     title: "发展历程",
-    image: "/src/assets/iculture4.png",
+    image: "/assets/iculture4.png",
   },
 ]);
 </script>

@@ -9,7 +9,7 @@ import { ChatDotRound, Share } from "@element-plus/icons-vue";
       <el-header>
         <div class="header-content">
           <div class="logo" @click="$router.push('/')" style="cursor: pointer">
-            <img src="./assets/logo.png" alt="聚恒集团" />
+            <img src="/assets/logo.png" alt="聚恒集团" />
           </div>
           <el-menu mode="horizontal" :router="true" class="main-menu">
             <!-- <el-menu-item index="/">首页</el-menu-item> -->
@@ -61,10 +61,10 @@ import { ChatDotRound, Share } from "@element-plus/icons-vue";
             </el-col>
             <el-col :span="8" class="jf-footer-r">
               <div class="code">
-                <img src="/src/assets/code.png" alt="二维码" />
+                <img src="/assets/code.png" alt="二维码" />
               </div>
               <div class="text">
-                <img src="/src/assets/flogo.png" alt="logo" class="footer-logo" />
+                <img src="/assets/flogo.png" alt="logo" class="footer-logo" />
                 <div class="footer-beian">
                   <span>网站备案/许可证号：</span>
                   <a target="_blank" href="https://beian.miit.gov.cn/" style="color: #989898"
