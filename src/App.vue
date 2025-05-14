@@ -1,23 +1,5 @@
 <script setup>
 import { ChatDotRound, Share } from "@element-plus/icons-vue";
-import { onMounted, onUnmounted } from "vue";
-
-onMounted(() => {
-  const header = document.querySelector(".el-header");
-  const onScroll = () => {
-    if (window.scrollY > 20) {
-      header && header.classList.add("scrolled");
-    } else {
-      header && header.classList.remove("scrolled");
-    }
-  };
-  window.addEventListener("scroll", onScroll);
-  onScroll();
-  // 卸载时移除监听
-  onUnmounted(() => {
-    window.removeEventListener("scroll", onScroll);
-  });
-});
 </script>
 
 <template>
@@ -26,11 +8,11 @@ onMounted(() => {
       <!-- 头部导航 -->
       <el-header>
         <div class="header-content">
-          <div class="logo">
+          <div class="logo" @click="$router.push('/')" style="cursor: pointer">
             <img src="./assets/logo.png" alt="聚恒集团" />
           </div>
           <el-menu mode="horizontal" :router="true" class="main-menu">
-            <el-menu-item index="/">首页</el-menu-item>
+            <!-- <el-menu-item index="/">首页</el-menu-item> -->
             <el-menu-item index="/about">关于我们</el-menu-item>
             <el-menu-item index="/news">新闻中心</el-menu-item>
             <el-menu-item index="/business">业务体系</el-menu-item>
@@ -45,31 +27,54 @@ onMounted(() => {
       </el-main>
 
       <!-- 页脚 -->
-      <el-footer height="200px">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>联系我们</h3>
-            <p>地址：湖南省长沙市</p>
-            <p>电话：0731-XXXXXXXX</p>
-            <p>邮箱：contact@ijheng.com</p>
-          </div>
-          <div class="footer-section">
-            <h3>关注我们</h3>
-            <div class="social-links">
-              <el-icon><ChatDotRound /></el-icon>
-              <el-icon><Share /></el-icon>
-            </div>
-          </div>
-          <div class="footer-section">
-            <h3>快速链接</h3>
-            <ul>
-              <li><router-link to="/about">关于我们</router-link></li>
-              <li><router-link to="/news">新闻中心</router-link></li>
-              <li><router-link to="/business">业务体系</router-link></li>
-            </ul>
-          </div>
+      <el-footer height="auto" class="jf-footer">
+        <div class="jf-wrap">
+          <el-row :gutter="40" class="footer-nav">
+            <el-col :span="4">
+              <dl>
+                <dt>关注我们</dt>
+                <dd class="jf-footer-wecode">
+                  <el-icon><ChatDotRound /></el-icon> 微信
+                </dd>
+              </dl>
+            </el-col>
+            <el-col :span="4">
+              <dl>
+                <dt><a href="javascript:void(0);">加入我们</a></dt>
+                <dd><a href="https://www.ijheng.com/campus.html" target="_blank">校园招聘</a></dd>
+              </dl>
+            </el-col>
+            <el-col :span="4">
+              <dl>
+                <dt><a href="javascript:void(0);">联系我们</a></dt>
+                <dd><a href="https://www.ijheng.com/address.html" target="_blank">公司地址</a></dd>
+                <dd>
+                  <a href="https://www.ijheng.com/cooperate.html" target="_blank">合作洽谈</a>
+                </dd>
+              </dl>
+            </el-col>
+            <el-col :span="4">
+              <dl>
+                <dt><a href="javascript:void(0);">法律信息</a></dt>
+                <dd><a href="https://www.ijheng.com/privacy.html" target="_blank">法律声明</a></dd>
+              </dl>
+            </el-col>
+            <el-col :span="8" class="jf-footer-r">
+              <div class="code">
+                <img src="/src/assets/code.png" alt="二维码" />
+              </div>
+              <div class="text">
+                <img src="/src/assets/flogo.png" alt="logo" class="footer-logo" />
+                <div class="footer-beian">
+                  <span>网站备案/许可证号：</span>
+                  <a target="_blank" href="https://beian.miit.gov.cn/" style="color: #989898"
+                    >湘ICP备19009912号-1</a
+                  >
+                </div>
+              </div>
+            </el-col>
+          </el-row>
         </div>
-        <div class="copyright">© 2024 聚恒集团 版权所有 | 湘ICP备XXXXXXXX号</div>
       </el-footer>
     </el-container>
   </div>
@@ -92,120 +97,134 @@ onMounted(() => {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(20, 30, 60, 0.95);
+  background: rgba(19, 29, 87, 0.7);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: height 0.3s, background 0.3s;
-  height: 80px;
+  transition: none;
+  height: 56px;
   display: flex;
   align-items: center;
 }
 
-.el-header.scrolled {
-  height: 56px;
-  background: rgba(20, 30, 60, 0.98);
-}
-
 .header-content {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 0 20px;
+  padding: 0 40px;
+  box-sizing: border-box;
 }
 
 .logo img {
-  height: 50px;
-  transition: height 0.3s;
-}
-
-.el-header.scrolled .logo img {
   height: 32px;
+  transition: none;
 }
 
 .main-menu {
+  background: transparent !important;
+  color: #fff !important;
   border-bottom: none;
+}
+
+.main-menu .el-menu-item {
+  color: #fff !important;
+}
+
+.main-menu .el-menu-item.is-active,
+.main-menu .el-menu-item:hover {
+  color: #ffd700 !important;
+  background: transparent !important;
 }
 
 .el-main {
   padding: 0;
   width: 100%;
-  margin-top: 80px;
 }
 
-.footer-content {
+.jf-footer {
+  background: #181c2a;
+  color: #fff;
+  padding: 48px 0 24px 0;
+  font-size: 15px;
+}
+.jf-wrap {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  padding: 40px 20px;
+  padding: 0 24px;
 }
-
-.footer-section h3 {
-  color: #333;
-  margin-bottom: 20px;
+.footer-nav {
+  align-items: flex-start;
 }
-
-.social-links {
-  display: flex;
-  gap: 20px;
+.jf-footer dl {
+  margin: 0 0 16px 0;
 }
-
-.social-links .el-icon {
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.copyright {
-  text-align: center;
-  padding: 20px 0;
-  border-top: 1px solid #eee;
-  color: #666;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-ul li {
+.jf-footer dt {
+  font-weight: bold;
   margin-bottom: 10px;
+  color: #fff;
 }
-
-ul li a {
-  color: #666;
+.jf-footer dd {
+  margin: 0 0 8px 0;
+  color: #bbb;
+}
+.jf-footer a {
+  color: #bbb;
   text-decoration: none;
 }
-
-ul li a:hover {
+.jf-footer a:hover {
   color: #409eff;
 }
-
-@media screen and (max-width: 768px) {
-  .el-header {
-    height: 56px;
+.jf-footer-wecode {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.jf-footer-r {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+.jf-footer-r .code img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  background: #fff;
+}
+.jf-footer-r .text {
+  color: #989898;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-logo {
+  height: 28px;
+  margin-right: 12px;
+  border-radius: 4px;
+  background: #fff;
+  padding: 2px 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+.footer-beian {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.footer-beian span {
+  color: #989898;
+}
+.footer-beian a {
+  color: #989898;
+  font-size: 13px;
+}
+@media screen and (max-width: 900px) {
+  .footer-nav {
+    flex-direction: column;
   }
-  .el-header.scrolled {
-    height: 48px;
-  }
-  .el-main {
-    margin-top: 56px;
-  }
-  .header-content {
-    padding: 0 10px;
-  }
-  .logo img {
-    height: 32px;
-  }
-  .el-header.scrolled .logo img {
-    height: 24px;
-  }
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px;
+  .jf-footer-r {
+    align-items: flex-start;
+    margin-top: 24px;
   }
 }
 </style>

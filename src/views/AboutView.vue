@@ -23,7 +23,7 @@
             </p>
           </div>
           <div class="intro-image">
-            <img src="/src/assets/company.jpg" alt="公司简介" />
+            <img src="/src/assets/company.jpeg" alt="公司简介" />
           </div>
         </div>
       </div>
@@ -80,7 +80,7 @@
                 <el-icon><Message /></el-icon> 邮箱：contact@ijheng.com
               </p>
               <div class="qrcode">
-                <img src="/src/assets/qrcode.jpg" alt="微信二维码" />
+                <img src="/src/assets/qrcode.png" alt="微信二维码" />
                 <p>扫码关注我们</p>
               </div>
             </div>
