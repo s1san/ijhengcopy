@@ -23,7 +23,7 @@
             </p>
           </div>
           <div class="intro-image">
-            <img src="/src/assets/company.jpeg" alt="公司简介" />
+            <img src="/assets/company.jpeg" alt="公司简介" />
           </div>
         </div>
       </div>

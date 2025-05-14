@@ -3,7 +3,7 @@
     <!-- Section 1: 开屏视频 -->
     <section class="hero-section">
       <video class="hero-video" autoplay loop muted playsinline>
-        <source src="/src/assets/intro.mp4" type="video/mp4" />
+        <source src="/assets/intro.mp4" type="video/mp4" />
       </video>
       <div class="hero-content"></div>
     </section>

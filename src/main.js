@@ -1,4 +1,3 @@
-import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -18,4 +17,4 @@ app.use(ElementPlus)
 app.use(createPinia())
 app.use(router)
 
-app.mount('#app')
+app.mount('#app') 
